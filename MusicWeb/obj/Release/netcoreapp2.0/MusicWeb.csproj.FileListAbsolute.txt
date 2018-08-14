@@ -1,0 +1,10 @@
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\bin\Release\netcoreapp2.0\MusicWeb.deps.json
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\bin\Release\netcoreapp2.0\MusicWeb.runtimeconfig.json
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\bin\Release\netcoreapp2.0\MusicWeb.runtimeconfig.dev.json
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\bin\Release\netcoreapp2.0\MusicWeb.dll
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\bin\Release\netcoreapp2.0\MusicWeb.pdb
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\obj\Release\netcoreapp2.0\MusicWeb.csproj.CoreCompileInputs.cache
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\obj\Release\netcoreapp2.0\MusicWeb.AssemblyInfoInputs.cache
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\obj\Release\netcoreapp2.0\MusicWeb.AssemblyInfo.cs
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\obj\Release\netcoreapp2.0\MusicWeb.dll
+C:\Users\Siva\source\repos\WebMusic\MusicWeb\obj\Release\netcoreapp2.0\MusicWeb.pdb

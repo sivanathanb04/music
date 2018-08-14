@@ -1,0 +1,13 @@
+﻿<title>Music</title>
+@model IEnumerable<MusicWeb.Models.Music>
+<body>
+    <table>
+        <tr>
+            <td>ID</td><td>TITLE</td>
+        </tr>
+        @foreach (var m in Model)
+        {
+            <tr><td>@m.Id</td><td>@m.Title</td></tr>
+        }
+    </table>
+</body>
