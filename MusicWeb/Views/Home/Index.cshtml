@@ -1,13 +1,13 @@
 ﻿<title>Music</title>
-@model IEnumerable<MusicWeb.Models.Music>
+@model IEnumerable<MusicWeb.ViewModel.MusicViewModel>
 <body>
     <table>
         <tr>
-            <td>ID</td><td>TITLE</td>
+            <td>ID</td><td>TITLE</td><td>GENRE</td>
         </tr>
         @foreach (var m in Model)
         {
-            <tr><td>@m.Id</td><td>@m.Title</td></tr>
+            <tr><td>@Html.ActionLink(@m.Id.ToString(),"Detail",new { Id=m.Id})</td><td>@m.Title</td><td>@m.Genre</td></tr>
         }
     </table>
 </body>

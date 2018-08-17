@@ -1,23 +1,36 @@
-﻿using System.Collections.Generic;
-using MusicWeb.Models;
+﻿using MusicWeb.Entities;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MusicWeb.Services
 {
     public class MockMusicData : IMusicData
     {
-        private IEnumerable<Music> _songs;
+        private List<Music> _songs;
         public MockMusicData()
         {
             _songs = new List<Music>
             {
-                new Music{Id=1,Title="Back Street Boys"},
-                new Music{ Id=2,Title="Aqua"},
-                new Music{Id=3,Title="Amine" }
+                new Music{Id=1,Title="Back Street Boys",Genre=Models.Genres.Jazz},
+                new Music{ Id=2,Title="Aqua",Genre=Models.Genres.Pop},
+                new Music{Id=3,Title="Amine",Genre=Models.Genres.Classic }
             };
         }
+
+        public void Add(Music newMusic)
+        {
+            newMusic.Id = _songs.Max(v => v.Id)+1;
+            _songs.Add(newMusic);
+        }
+
         public IEnumerable<Music> GetAll()
         {
             return _songs;
+        }
+
+        public Music GetMusic(int Id)
+        {
+            return _songs.FirstOrDefault(v=>v.Id==Id);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using MusicWeb.Models;
+﻿using MusicWeb.Entities;
 using System.Collections.Generic;
 
 namespace MusicWeb.Services
@@ -6,5 +6,7 @@ namespace MusicWeb.Services
     public interface IMusicData
     {
         IEnumerable<Music> GetAll();
+        Music GetMusic(int Id);
+        void Add(Music newMusic);
     }
 }

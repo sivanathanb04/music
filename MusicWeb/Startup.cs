@@ -5,24 +5,33 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MusicWeb.Services;
 using System.IO;
+using Microsoft.EntityFrameworkCore;
+using MusicWeb.Data;
 
 namespace MusicWeb
 {
     public class Startup
     {
         public IConfiguration configuration;
-        public Startup()
+        public Startup(IHostingEnvironment environment)
         {
-            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("dummy.json");
+            var builder = new ConfigurationBuilder().SetBasePath(Directory.GetCurrentDirectory()).AddJsonFile("appsettings.json");
+            if (environment.IsDevelopment())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
             configuration = builder.Build();
         }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var conn = configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<MusicDbContext>(options => options.UseSqlServer(conn));
             services.AddMvc();
             services.AddSingleton<IMessageService, ConfigurationMessageService>().AddSingleton(provider => configuration);
-            services.AddScoped<IMusicData, MockMusicData>();
+            services.AddScoped<IMusicData, SqlMusicData>();
+
             //services.AddSingleton(provider => configuration);
         }
 
